@@ -1,0 +1,33 @@
+/* Flashdata Styles */
+.error {
+  background: url('../images/error_24.png') no-repeat #ffbbbb 5px 7px;
+  color: #000000;
+  padding: 10px 10px 8px 33px;
+  margin: 5px 0;
+  border: 1px solid #000000;
+  line-height: 22px;
+}
+.message {
+  background: url('../images/information_24.png') no-repeat #baffbf 5px 7px;
+  color: #000000;
+  padding: 10px 10px 8px 33px;
+  margin: 5px 0;
+  border: 1px solid #000000;
+  line-height: 22px;
+}
+.success {
+  background: url('../images/tick_24.png') no-repeat #baffbf 5px 7px;
+  color: #000000;
+  padding: 10px 10px 8px 33px;
+  margin: 5px 0;
+  border: 1px solid #000000;
+  line-height: 22px;
+}
+.warning {
+  background: url('../images/warning_24.png') no-repeat #fffaba 5px 7px;
+  color: #000000;
+  padding: 10px 10px 8px 33px;
+  margin: 5px 0;
+  border: 1px solid #000000;
+  line-height: 22px;
+}

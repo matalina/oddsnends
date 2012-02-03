@@ -1,0 +1,17 @@
+/* Ajax needs */
+.js_reveal, .hide {
+  display: none;
+}
+.js_remove, .show {
+  display: block;
+}
+
+
+@media only screen and (min-width: 480px) {
+
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
