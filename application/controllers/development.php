@@ -10,24 +10,19 @@
  * @package Project's Name
  * @subpackage Controllers
  */
-class Development extends CI_Controller {
+class Development extends RA_Controller {
   /**
    * Initialize Controller
    * @access public
    */
   public function __construct() {
-    parent::__construct();
-    if(!$this->auth_lib->logged_in())  {
-      redirect('auth/login');
-    }
-    $this->auth_lib->authenticate('development');
+    parent::__construct('development');
   }
 
   /**
    * Manage Permissions
    */
   public function permissions() {
-    $this->load->model('Auth_model');
     $controllers = $this->Auth_model->get_controllers();
     $groups = $this->Auth_model->get_groups();
     $permissions = $this->Auth_model->get_permissions();

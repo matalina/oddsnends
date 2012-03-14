@@ -10,24 +10,20 @@
  * @package Maintenance Controller
  * @subpackage Controllers
  */
-class Maintenance extends CI_Controller {
+class Maintenance extends RA_Controller {
   /**
    * Initialize Controller
    * @access public
    */
   public function __construct() {
-    parent::__construct();
-    if(!$this->auth_lib->logged_in())  {
-      redirect('auth/login');
-    }
-    $this->auth_lib->authenticate('maintenance');
+    parent::__construct('maintenance');
   }
 
   /**
    * Display All Users for Management
    */
   public function users() {
-    $this->load->model('Auth_model');
+
     $users = $this->Auth_model->get_users();
     $data['users'] = $users;
 
@@ -39,7 +35,7 @@ class Maintenance extends CI_Controller {
    * Deactivate a User
    */
   public function deactivate($user_id) {
-    $this->load->model('Auth_model');
+    
     $check = $this->Auth_model->deactivate_user((int)$user_id);
 
     if($check) {
@@ -56,7 +52,7 @@ class Maintenance extends CI_Controller {
    * Deactivate a User
    */
   public function activate($user_id) {
-    $this->load->model('Auth_model');
+    
     $check = $this->Auth_model->activate_user((int)$user_id);
 
     if($check) {
@@ -73,7 +69,7 @@ class Maintenance extends CI_Controller {
    * Edit User
    */
   public function edit_user($user_id = '') {
-    $this->load->model('Auth_model');
+    
     if($user_id != '') {
       $user = $this->Auth_model->get_user($user_id);
     }
@@ -140,7 +136,7 @@ class Maintenance extends CI_Controller {
    * Change User Groups
    */
   public function users_group($user_id) {
-    $this->load->model('Auth_model');
+    
     $user = $this->Auth_model->get_user($user_id);
     $user_groups = $this->Auth_model->get_user_groups_more($user_id);
     $groups = $this->Auth_model->get_groups();
@@ -157,7 +153,7 @@ class Maintenance extends CI_Controller {
    * Remove Group from user
    */
   public function remove_group($user_id, $group_id) {
-    $this->load->model('Auth_model');
+    
     $check = $this->Auth_model->remove_group($user_id,$group_id);
 
     if($check) {
@@ -174,7 +170,7 @@ class Maintenance extends CI_Controller {
    * Add Group to user
    */
   public function add_group($user_id, $group_id) {
-    $this->load->model('Auth_model');
+    
     $check = $this->Auth_model->set_group($user_id,$group_id);
 
     if($check) {
