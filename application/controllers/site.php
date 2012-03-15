@@ -22,7 +22,8 @@ class Site extends CI_Controller {
    * Redirect
    */
   public function index() {
-    $this->homepage();
+    $data['title'] = 'Home';
+    $this->template->load('templates/site','site/home',$data);
   }
 
   /**
@@ -35,16 +36,23 @@ class Site extends CI_Controller {
       redirect('auth/login');
     }
     $this->auth_lib->authenticate('member');
-
-    $data['title'] = 'Base Home Page';
-    $this->template->load('templates/two_column_layout','site/home',$data);
+    $this->session->set_flashdata('success','<div class="success">You have successfully logged in.</div>');
+    if(is_allowed('client')) {
+      redirect('client/index');
+    }
+    else if(is_allowed('admin')) {
+      redirect('admin/index');
+    }    
+    else {
+      redirect('site/index');
+    }
   }
 
   /**
    * Pending Page for those who do not have an activated account
    */
   public function pending() {
-    $data['title'] = 'Pending Home Page';
-    $this->template->load('templates/one_column_layout','site/pending',$data);
+    $this->session->set_flashdata('warning','<div class="warning">You have not activated your account.</div>');
+    redirect('site/index');
   }
 }

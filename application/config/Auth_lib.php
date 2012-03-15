@@ -1,7 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 // Address to send emails from
-$config['auth_email'] = 'donotreply@babers.com';
+$config['auth_email'] = 'webmaster@oddsnendsphotography.com';
 
 
 // Default member group id

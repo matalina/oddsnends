@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = md5('myCommunitySoftware');
+$config['encryption_key'] = md5('Odds-N-Ends Photography');
 
 /*
 |--------------------------------------------------------------------------
@@ -244,7 +244,7 @@ $config['encryption_key'] = md5('myCommunitySoftware');
 | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']		= 'dev_com';
+$config['sess_cookie_name']		= 'onep';
 $config['sess_expiration']		= 7200;
 $config['sess_expire_on_close']	= FALSE;
 $config['sess_encrypt_cookie']	= TRUE;
@@ -294,8 +294,8 @@ $config['global_xss_filtering'] = TRUE;
 | 'csrf_expire' = The number in seconds the token should expire.
 */
 $config['csrf_protection'] = TRUE;
-$config['csrf_token_name'] = 'dev_com_csrf';
-$config['csrf_cookie_name'] = 'dev_com_csrf_cookie';
+$config['csrf_token_name'] = 'onep_csrf';
+$config['csrf_cookie_name'] = 'onep_csrf_cookie';
 $config['csrf_expire'] = 7200;
 
 /*

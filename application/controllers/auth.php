@@ -17,14 +17,15 @@ class Auth extends CI_Controller {
   public function __construct() {
     parent::__construct();
     $this->load->model('Auth_model');
-    $this->config->load('Auth_lib');
   }
+  
   /**
    * Redirect to Login page
    */
   public function index() {
     $this->login();
   }
+  
   /**
    * Login User
    */
@@ -72,15 +73,12 @@ class Auth extends CI_Controller {
     }
     $data = array();
     if($this->input->post('register')) {
-      $this->form_validation->set_rules('username', 'Username', 'required|callback__unique_username');
+      $this->form_validation->set_rules('username', 'Username', 'required|is_unqiue[users.username]');
       $this->form_validation->set_rules('password', 'Password', 'required');
-      $this->form_validation->set_rules('email', 'Email', 'required|valid_email|callback__unique_email');
+      $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
       $this->form_validation->set_rules('first_name', 'First Name', 'required');
       $this->form_validation->set_rules('last_name', 'Last Name', 'required');
       $this->form_validation->set_rules('confirm', 'Confirm Password', 'required|matches[password]');
-
-      $this->form_validation->set_message('_unique_username', 'The %s is already used');
-      $this->form_validation->set_message('_unique_email', 'The %s is already used');
 
       $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
@@ -251,23 +249,8 @@ class Auth extends CI_Controller {
   public function logout() {
     $this->load->library('Auth_lib');
     $this->auth_lib->logout();
-    redirect('auth/login');
-  }
-
-  /**
-   * Check if Username is unique
-   * @access private
-   */
-  function _unique_username($data) {
-    return $this->Auth_model->unique_username($data);
-  }
-
-  /**
-   * Check if Email is unique
-   * @access private
-   */
-  function _unique_email($data) {
-    return $this->Auth_model->unique_email($data);
+    $this->session->set_flashdata('success','<div class="success">You have successfully logged out.</div>');
+    redirect('site/index');
   }
 
   /**

@@ -1,2 +1,9 @@
 /* Javascript Styles Only */
+.js_reveal, .hide {
+  display: none;
+}
+.js_remove, .show {
+  display: block;
+}
+
 

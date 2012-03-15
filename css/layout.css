@@ -1,17 +1,27 @@
-/* Ajax needs */
-.js_reveal, .hide {
-  display: none;
+body, html {
+  padding: 0;
+  margin: 0;
+  min-width: 190px;
+  width: 100%;
+  height: 100%;
 }
-.js_remove, .show {
+#sidebar {
+  padding: .5%;
+  width: 24%;
+  height: 100%;
   display: block;
+  float: left;
 }
-
-
+#gallery {
+  width: 75%;
+  height: 100%;
+  display: block;
+  float: left;
+}
+.clear {
+  clear: both;
+}  
 @media only screen and (min-width: 480px) {
 
-
-}
-
-@media only screen and (min-width: 768px) {
 
 }
