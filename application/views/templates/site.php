@@ -1,6 +1,6 @@
 <?php
   $header['title'] = $title;
-  $header['body_id'] = 'id="two_column"';
+  $header['body_id'] = 'id="'.$id.'"';
   $this->load->view('templates/header',$header);
 ?>
 <!-- Two Column Layout Start-->
@@ -8,7 +8,7 @@
   <?php $this->load->view('templates/main_menu'); ?>
 </aside>
 
-<div id="gallery">
+<section id="gallery">
   <?php
     if($this->session->flashdata('error')) {
       echo $this->session->flashdata('error');
@@ -28,7 +28,7 @@
       echo $content; 
     }
   </article>
-</div>
+</section>
 <br class="clear"/>
 
 <!-- Two Column Layout End -->

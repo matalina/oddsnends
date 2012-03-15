@@ -31,3 +31,15 @@
   border: 1px solid #000000;
   line-height: 22px;
 }
+#sidebar {
+  background: #000000;
+  color: #ffffff;
+}
+#gallery {
+  background: #cccccc;
+  color: #000000;
+}
+#sidebar li {
+  text-align: center;
+  border-bottom: 2px ridge #e8e8e8;
+}

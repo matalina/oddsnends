@@ -1,27 +1,76 @@
 body, html {
   padding: 0;
   margin: 0;
-  min-width: 190px;
   width: 100%;
   height: 100%;
 }
 #sidebar {
   padding: .5%;
   width: 24%;
-  height: 100%;
+  height: 99%;
   display: block;
   float: left;
+  position: fixed;
+  z-index: 100;
 }
 #gallery {
   width: 75%;
   height: 100%;
   display: block;
   float: left;
+  position: fixed;
+  margin-left: 25%;
+  z-index: 10;
+}
+.error, .message, .warning, .success {
+  width: 80%;
+  margin: 10px auto;
+}
+#content {
+  width: 75%;
+  height: 75%;
+  margin: 10px 0;
+  overflow-y: auto;
+  padding: 10px;
+  position: relative;
+  z-index: 50;
 }
 .clear {
   clear: both;
-}  
-@media only screen and (min-width: 480px) {
+}
+@media only screen and (max-width: 768px) {
+  #sidebar {
+    padding: 1%;
+    width: 98%;
+    float: none;
+    height: auto;
+    position: relative;
+  }
+  #gallery {
+    width: 100%;
+    float: none;
+    height: 67%;
+    overflow-y: visible;
+    position: relative;
+    margin-left: 0;
+  }
+  #content {
+    width: auto;
+    margin: auto;
+    height: auto;
+    overflow-y: none;
+  }
+}
 
+#sidebar ul {
+  margin: 0;
+  padding: 0;
 
+}
+#sidebar li {
+  list-style-type: none;
+  margin: 5px 10px;
+  padding: 10px;
+  position: relative;
+  overflow: visible;
 }
