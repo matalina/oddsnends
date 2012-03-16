@@ -39,6 +39,7 @@
 */
 
 $route['auth/(:any)'] = 'auth/$1';
+$route['image/(:any)'] = 'image/$1';
 $route['client/(:any)'] = 'client/$1';
 $route['admin/(:any)'] = 'admin/$1';
 $route['(:any)'] = 'site/page/$1';

@@ -6,10 +6,11 @@ This project is for a Photography Portfolio and private Client Gallery.
 * Home grown auth system based on user groups and controllers
 * Responsive Design
 * Pretty URLs
+* Image Folder Protection (Image files never called by name & stored file names are abstract)
+* Image Watermarking
 
 ## Feature To Do List
-* Image Folder Protection
-* Image Watermarking
+
 * Full Image Background Gallery Slider
 * Client Protected Galleries
 * Public Gallery/Portofolio
