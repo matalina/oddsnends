@@ -13,6 +13,7 @@
 class Auth extends CI_Controller {
   /**
    * Initialize Controller
+   * @access public
    */
   public function __construct() {
     parent::__construct();
@@ -21,6 +22,7 @@ class Auth extends CI_Controller {
   
   /**
    * Redirect to Login page
+   * @access public
    */
   public function index() {
     $this->login();
@@ -28,6 +30,7 @@ class Auth extends CI_Controller {
   
   /**
    * Login User
+   * @access public
    */
   public function login() {
     if($this->session->userdata('user_id') && $this->session->userdata('username')) {
@@ -62,9 +65,10 @@ class Auth extends CI_Controller {
   }
 
   /**
-   * Register New User
+   * Register New User (Not Needed)
+   * @access protected
    */
-  public function register() {
+  protected function _register() {
     if($this->session->userdata('user_id') && $this->session->userdata('username')) {
       if(!$this->session->userdata('groups')) {
         redirect('site/pending');
@@ -125,6 +129,7 @@ class Auth extends CI_Controller {
 
   /**
    * Retreive Password
+   * @access public
    */
   public function lost_password($code = '') {
     // If Lost Password form has been submitted
@@ -230,9 +235,10 @@ class Auth extends CI_Controller {
   }
 
   /**
-   * Activate Account
+   * Activate Account (Not Needed)
+   * @access protected
    */
-  public function activate($code) {
+  protected function _activate($code) {
     $check = $this->Auth_model->activate($code);
     if($check) {
       $this->session->set_flashdata('success','<div class="success">Your account has been activated you may login now.</div>');
@@ -245,6 +251,7 @@ class Auth extends CI_Controller {
 
   /**
    * Log user out
+   * @access public
    */
   public function logout() {
     $this->load->library('Auth_lib');
@@ -255,9 +262,9 @@ class Auth extends CI_Controller {
 
   /**
    * Check if Email exits
-   * @access private
+   * @access protected
    */
-  function _email_exists($data) {
+  protected function _email_exists($data) {
     return $this->Auth_model->email_exists($data);
   }
 }

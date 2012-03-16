@@ -20,6 +20,7 @@ class Site extends CI_Controller {
   }
   /**
    * Redirect
+   * @access public
    */
   public function index() {
     $data['title'] = 'Home';
@@ -37,22 +38,40 @@ class Site extends CI_Controller {
     }
     $this->auth_lib->authenticate('member');
     $this->session->set_flashdata('success','<div class="success">You have successfully logged in.</div>');
-    if(is_allowed('client')) {
-      redirect('client/index');
-    }
-    else if(is_allowed('admin')) {
-      redirect('admin/index');
-    }    
-    else {
-      redirect('site/index');
-    }
+    redirect('site/index');
   }
 
   /**
    * Pending Page for those who do not have an activated account
+   * @access public
    */
   public function pending() {
     $this->session->set_flashdata('warning','<div class="warning">You have not activated your account.</div>');
     redirect('site/index');
   }
+  
+  /**
+   * Get Page and Display
+   * @access public
+   */
+  public function page($slug,$ajax = false) {
+    $this->load->model('Page_model');
+    $this->load->library('typography');
+    $page = $this->Page_model->get_page_by_slug($slug);
+    $data['page'] = $page;
+    if(!$ajax) { // if not ajax load view with template
+      $data['title'] = $page['name'];
+      $this->template->load('templates/site','site/content',$data);
+    }
+    else { // else echo page contents
+      $this->load->template('site/content',$data;
+    }
+  }
+  
+  /**
+   * View Galleries
+   */
+   public function gallery($gallery_id = 1) {
+     
+   }
 }

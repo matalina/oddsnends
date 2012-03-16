@@ -212,4 +212,11 @@ class Admin extends RA_Controller {
       redirect('maintenance/users_group/'.$user_id);
     }
   }
+  
+  /**
+   * Add New User
+   */
+   public function new_user() {
+   
+   }
 }
