@@ -24,6 +24,7 @@ class Site extends CI_Controller {
    */
   public function index() {
     $data['title'] = 'Home';
+    $data['id'] = 'home';
     $this->template->load('templates/site','site/home',$data);
   }
 
@@ -64,7 +65,7 @@ class Site extends CI_Controller {
       $this->template->load('templates/site','site/content',$data);
     }
     else { // else echo page contents
-      $this->load->template('site/content',$data;
+      $this->load->template('site/content',$data);
     }
   }
   

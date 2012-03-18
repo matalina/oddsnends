@@ -24,9 +24,11 @@
     }
   ?>
   <article id="content">
-    if(isset($contents)) {
-      echo $content; 
-    }
+    <?php
+      if(isset($content)) {
+        echo $content; 
+      }
+    ?> 
   </article>
 </section>
 <br class="clear"/>

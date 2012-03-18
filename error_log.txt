@@ -1,0 +1,76 @@
+[17-Mar-2012 22:01:41 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:01:41 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:01:41 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:01:41 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:01:41 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:01:41 UTC] PHP Stack trace:
+[17-Mar-2012 22:01:41 UTC] PHP Stack trace:
+[17-Mar-2012 22:01:41 UTC] PHP Stack trace:
+[17-Mar-2012 22:01:41 UTC] PHP Stack trace:
+[17-Mar-2012 22:01:41 UTC] PHP Stack trace:
+[17-Mar-2012 22:01:41 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:01:41 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:01:41 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:01:41 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:01:41 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:01:41 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:01:41 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:01:41 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:01:41 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:01:41 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:01:41 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:01:41 UTC] PHP Stack trace:
+[17-Mar-2012 22:01:41 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:01:41 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:01:49 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:01:49 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:01:49 UTC] PHP Stack trace:
+[17-Mar-2012 22:01:49 UTC] PHP Stack trace:
+[17-Mar-2012 22:01:49 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:01:49 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:01:49 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:01:49 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:01:49 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:01:49 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:01:49 UTC] PHP Stack trace:
+[17-Mar-2012 22:01:49 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:01:49 UTC] PHP Stack trace:
+[17-Mar-2012 22:01:49 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:01:49 UTC] PHP Stack trace:
+[17-Mar-2012 22:01:49 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:01:49 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:01:49 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:01:49 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:01:49 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:01:49 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:01:49 UTC] PHP Stack trace:
+[17-Mar-2012 22:01:49 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:01:49 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:02:05 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:02:05 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:02:05 UTC] PHP Stack trace:
+[17-Mar-2012 22:02:05 UTC] PHP Stack trace:
+[17-Mar-2012 22:02:05 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:02:05 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:02:05 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:02:05 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:02:05 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:02:05 UTC] PHP Stack trace:
+[17-Mar-2012 22:02:05 UTC] PHP Stack trace:
+[17-Mar-2012 22:02:05 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:02:05 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:02:05 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:02:05 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:02:05 UTC] PHP Stack trace:
+[17-Mar-2012 22:02:05 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:02:05 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:02:05 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:02:05 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:02:05 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:02:05 UTC] PHP Stack trace:
+[17-Mar-2012 22:02:05 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:02:05 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
+[17-Mar-2012 22:02:14 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\wamp\www\oddsnends\application\controllers\site.php on line 67
+[17-Mar-2012 22:02:14 UTC] PHP Stack trace:
+[17-Mar-2012 22:02:14 UTC] PHP   1. {main}() C:\wamp\www\oddsnends\index.php:0
+[17-Mar-2012 22:02:14 UTC] PHP   2. require_once() C:\wamp\www\oddsnends\index.php:206
