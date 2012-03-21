@@ -1,5 +1,10 @@
+<p><?php
+  echo anchor('admin/new_group','Add New Group');
+  echo ' | ';
+  echo anchor('admin/new_controller','Add New Controller');
+?></p>
 <?php
-  echo form_open('development/permissions');
+  echo form_open('admin/permissions');
 ?>
 <table>
   <thead>

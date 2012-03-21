@@ -1,3 +1,4 @@
+<p><?php echo anchor('admin/new_user','Add New User')?></p>
 <table>
   <thead>
     <tr>
@@ -22,13 +23,13 @@
               <?php
                 if($user['user_id'] != 1) {
                   if($user['active'] == 1) {
-                    echo anchor('maintenance/deactivate/'.$user['user_id'],'Deactivate', 'class="button"');
+                    echo anchor('admin/deactivate/'.$user['user_id'],'Deactivate', 'class="button"');
                   }
                   else {
-                    echo ' '.anchor('maintenance/activate/'.$user['user_id'],'Activate', 'class="button"');
+                    echo ' '.anchor('admin/activate/'.$user['user_id'],'Activate', 'class="button"');
                   }
-                  echo ' '.anchor('maintenance/edit_user/'.$user['user_id'],'Edit User', 'class="button"');
-                  echo ' '.anchor('maintenance/users_group/'.$user['user_id'],'Edit User Groups', 'class="button"');
+                  echo ' '.anchor('admin/edit_user/'.$user['user_id'],'Edit User', 'class="button"');
+                  echo ' '.anchor('admin/users_group/'.$user['user_id'],'Edit User Groups', 'class="button"');
                 }
                 else {
                   echo 'N/A';

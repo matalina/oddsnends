@@ -72,7 +72,16 @@ class Site extends CI_Controller {
   /**
    * View Galleries
    */
-   public function gallery($gallery_id = 1) {
+  public function gallery($gallery_id = 1,$ajax = false) {
      
-   }
+  }
+   
+  /**
+   * Contact Form
+   */
+  public function contact($ajax = false) {
+    
+  }
+   
+   
 }

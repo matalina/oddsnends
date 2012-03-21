@@ -33,11 +33,11 @@ class Admin extends RA_Controller {
 
       if($check) {
         $this->session->set_flashdata('success','<div class="success">Permissions have been changed.</div>');
-        redirect('development/permissions');
+        redirect('admin/permissions');
       }
       else {
         $this->session->set_flashdata('error','<div class="error">Permissions have not been changed.</div>');
-        redirect('development/permissions');
+        redirect('admin/permissions');
       }
     }
 
@@ -46,7 +46,7 @@ class Admin extends RA_Controller {
     $data['permissions'] = $permissions;
 
     $data['title'] = 'Manage Permissions';
-    $this->template->load('templates/two_column_layout','dev/permissions',$data);
+    $this->template->load('templates/site','dev/permissions',$data);
   }
   
   /**
@@ -58,7 +58,7 @@ class Admin extends RA_Controller {
     $data['users'] = $users;
 
     $data['title'] = 'Manage Users';
-    $this->template->load('templates/two_column_layout','maintenance/users',$data);
+    $this->template->load('templates/site','admin/users',$data);
   }
 
   /**
@@ -70,11 +70,11 @@ class Admin extends RA_Controller {
 
     if($check) {
       $this->session->set_flashdata('success','<div class="success">User was deactivated</div>');
-      redirect('maintenance/users');
+      redirect('admin/users');
     }
     else {
       $this->session->set_flashdata('error','<div class="error">User was not deactivated.</div>');
-      redirect('maintenance/users');
+      redirect('admin/users');
     }
   }
 
@@ -87,11 +87,11 @@ class Admin extends RA_Controller {
 
     if($check) {
       $this->session->set_flashdata('success','<div class="success">User was activated</div>');
-      redirect('maintenance/users');
+      redirect('admin/users');
     }
     else {
       $this->session->set_flashdata('error','<div class="error">User was not activated.</div>');
-      redirect('maintenance/users');
+      redirect('admin/users');
     }
   }
 
@@ -113,7 +113,11 @@ class Admin extends RA_Controller {
       $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
       $this->form_validation->set_rules('first_name', 'First Name', 'required');
       $this->form_validation->set_rules('last_name', 'Last Name', 'required');
-      $this->form_validation->set_rules('store_id', 'Store/District', 'required');
+      $this->form_validation->set_rules('address', 'Address', 'trim');
+      $this->form_validation->set_rules('city', 'City', 'trim');
+      $this->form_validation->set_rules('state', 'State', 'max_length[2]|min_length[2]');
+      $this->form_validation->set_rules('zip', 'Zip', 'min_length[5]|max_length[10]|valid_zip');
+      $this->form_validation->set_rules('phone', 'Phone Number', 'required|min_length[10]|max_length[14]|valid_phone');
 
       $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
@@ -123,11 +127,11 @@ class Admin extends RA_Controller {
 
         if($check) {
           $this->session->set_flashdata('success','<div class="success">User info was changed</div>');
-          redirect('maintenance/users');
+          redirect('admin/users');
         }
         else {
           $this->session->set_flashdata('error','<div class="error">User info was not changed.</div>');
-          redirect('maintenance/users');
+          redirect('admin/users');
         }
       }
     }
@@ -143,23 +147,19 @@ class Admin extends RA_Controller {
 
         if($check) {
           $this->session->set_flashdata('success','<div class="success">User info was changed</div>');
-          redirect('maintenance/users');
+          redirect('admin/users');
         }
         else {
           $this->session->set_flashdata('error','<div class="error">User info was not changed.</div>');
-          redirect('maintenance/users');
+          redirect('admin/users');
         }
       }
     }
-
-    $this->load->model('Stores_model');
     $this->load->helper('general');
-    $districts_dd = make_dropdown($this->Stores_model->get_districts(),'district_name','district_name');
-    $stores_dd = make_dropdown($this->Stores_model->get_all_stores(),'STID','STID');
-    $data['stores'] = array('Home Office' => array('999' => '999'),'Districts' => $districts_dd, 'Stores' => $stores_dd);
+    $data['states'] = states_dropdown();
     $data['user'] = $user;
     $data['title'] = 'Edit User';
-    $this->template->load('templates/two_column_layout','maintenance/edit_user',$data);
+    $this->template->load('templates/site','admin/edit_user',$data);
   }
 
   /**
@@ -176,7 +176,7 @@ class Admin extends RA_Controller {
     $this->load->helper('general');
     $data['groups'] = $groups;
     $data['title'] = 'Edit User Groups';
-    $this->template->load('templates/two_column_layout','maintenance/user_groups',$data);
+    $this->template->load('templates/site','admin/user_groups',$data);
   }
 
   /**
@@ -188,11 +188,11 @@ class Admin extends RA_Controller {
 
     if($check) {
       $this->session->set_flashdata('success','<div class="success">Group was successfully removed from user.</div>');
-      redirect('maintenance/users_group/'.$user_id);
+      redirect('admin/users_group/'.$user_id);
     }
     else {
       $this->session->set_flashdata('error','<div class="error">Group was not removed from user.</div>');
-      redirect('maintenance/users_group/'.$user_id);
+      redirect('admin/users_group/'.$user_id);
     }
   }
 
@@ -205,18 +205,138 @@ class Admin extends RA_Controller {
 
     if($check) {
       $this->session->set_flashdata('success','<div class="success">Group was successfully added to user.</div>');
-      redirect('maintenance/users_group/'.$user_id);
+      redirect('admin/users_group/'.$user_id);
     }
     else {
       $this->session->set_flashdata('error','<div class="error">Group was not added to user.</div>');
-      redirect('maintenance/users_group/'.$user_id);
+      redirect('admin/users_group/'.$user_id);
     }
   }
   
   /**
    * Add New User
    */
-   public function new_user() {
+  public function new_user() {
+    if($this->input->post('new_user')) {
+  
+      $this->form_validation->set_rules('username', 'Username', 'required');
+      $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+      $this->form_validation->set_rules('first_name', 'First Name', 'required');
+      $this->form_validation->set_rules('last_name', 'Last Name', 'required');
+      $this->form_validation->set_rules('address', 'Address', 'trim');
+      $this->form_validation->set_rules('city', 'City', 'trim');
+      $this->form_validation->set_rules('state', 'State', 'max_length[2]|min_length[2]');
+      $this->form_validation->set_rules('zip', 'Zip', 'min_length[5]|max_length[10]|valid_zip');
+      $this->form_validation->set_rules('phone', 'Phone Number', 'required|min_length[10]|max_length[14]|valid_phone');
+      $this->form_validation->set_rules('password', 'Password', 'required');
+      $this->form_validation->set_rules('confirm', 'Confirm Password', 'required|matches[password]');
+  
+      $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+  
+      if ($this->form_validation->run()) {
+        $posts = $this->input->post();
+        $check = $this->Auth_model->new_user($posts);
+  
+        if($check) {
+          $this->session->set_flashdata('success','<div class="success">User was successfully added</div>');
+          redirect('admin/users');
+        }
+        else {
+          $this->session->set_flashdata('error','<div class="error">User was not added.</div>');
+          redirect('admin/users');
+        }
+      }
+    }
+  
+    
+    $this->load->helper('general');
+    $data['states'] = states_dropdown();
+    $data['title'] = 'New User';
+    $this->template->load('templates/site','admin/new_user',$data);
+  }
    
-   }
+  /**
+   * Create New Group
+   */
+  public function new_group() {
+      
+  }
+  
+  /**
+   * Create New Controller
+   */
+  public function new_conroller() {
+      
+  }
+  
+  /**
+   * Add a New Page
+   */
+  public function new_page() {
+    
+  }
+  
+  /**
+   * Edit a Page
+   */
+  public function edit_page($page_id) {
+    
+  }
+  
+  /**
+   * Remove a Page
+   */
+  public function remove_page($page_id) {
+    
+  }
+  
+  /**
+   * Add a New Gallery
+   */
+  public function new_gallery() {
+    
+  }
+  
+  /**
+   * Edit a Gallery
+   */
+  public function edit_gallery($gallery_id) {
+    
+  }
+  
+  /**
+   * Upload Images
+   */
+  public function upload_images() {
+    
+  }
+  
+  /**
+   * Remove an Image
+   */
+  public function remove_image($image_id) {
+    
+  }
+  
+  /**
+   * Edit an Image
+   */
+  public function edit_image($image_id) {
+    
+  }
+  
+  /**
+   * Remove a Tag
+   */
+  public function remove_tag($tag_id) {
+    
+  }
+  
+  /**
+   * Edit a Tag
+   */
+  public function edit_tag($tag_id) {
+    
+  }
+    
 }

@@ -26,6 +26,6 @@ class my404 extends CI_Controller {
     $this->output->set_status_header('404');
     $data['content'] = 'error_404'; // View name
     $data['title'] = '404 Error - File Not Found';
-    $this->template->load('templates/full_page_layout','site/404_error',$data);//loading in my template
+    $this->template->load('templates/site','site/404_error',$data);//loading in my template
   }
 }

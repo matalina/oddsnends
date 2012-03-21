@@ -8,7 +8,7 @@
   if(!empty($user_groups)) {
     foreach($user_groups as $ug) {
       ?>
-        <li><?php echo $ug['name'].' - '.anchor('maintenance/remove_group/'.$ug['user_id'].'/'.$ug['group_id'],'Remove Group');?></li>
+        <li><?php echo $ug['name'].' - '.anchor('admin/remove_group/'.$ug['user_id'].'/'.$ug['group_id'],'Remove Group');?></li>
       <?php
     }
   }
@@ -31,7 +31,7 @@
       }
     }
     if($check) {
-      echo '<li>'.$group['name'].' - '.anchor('maintenance/add_group/'.$user['user_id'].'/'.$group['id'],'Add Group to User').'</li>';
+      echo '<li>'.$group['name'].' - '.anchor('admin/add_group/'.$user['user_id'].'/'.$group['id'],'Add Group to User').'</li>';
     }
   }
 ?>

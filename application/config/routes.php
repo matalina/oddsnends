@@ -38,6 +38,8 @@
 |
 */
 
+$route['contact'] = 'site/contact';
+$route['gallery/(:any)'] = 'site/gallery/$1';
 $route['auth/(:any)'] = 'auth/$1';
 $route['image/(:any)'] = 'image/$1';
 $route['client/(:any)'] = 'client/$1';

@@ -61,7 +61,7 @@ class Auth extends CI_Controller {
       }
     }
     $this->template->set('title','Login');
-    $this->template->load('templates/not_logged_in_layout','templates/auth/login',$data);
+    $this->template->load('templates/site','templates/auth/login',$data);
   }
 
   /**
@@ -117,14 +117,14 @@ class Auth extends CI_Controller {
         else {
           $data['message'] = '<div class="error">Your account has been created, but the activation email was not sent.  Please Contact our web developer for assistance.</div>';
         }
-        $this->template->load('templates/not_logged_in_layout','templates/message',$data);
+        $this->template->load('templates/site','templates/message',$data);
 
         return;
       }
     }
 
     $this->template->set('title','Register');
-    $this->template->load('templates/not_logged_in_layout','templates/auth/register',$data);
+    $this->template->load('templates/site','templates/auth/register',$data);
   }
 
   /**
@@ -141,7 +141,7 @@ class Auth extends CI_Controller {
       if ($this->form_validation->run() == FALSE) {
         // Display email form
         $this->template->set('title','Lost Password');
-        $this->template->load('templates/not_logged_in_layout','templates/auth/lost_password');
+        $this->template->load('templates/site','templates/auth/lost_password');
       }
       else {
         $code = $this->Auth_model->lost_password($this->input->post('email'));
@@ -176,7 +176,7 @@ class Auth extends CI_Controller {
           $data['message'] = '<div class="error">That email does not exist.</div>';
         }
         $this->template->set('title','Lost Password');
-        $this->template->load('templates/not_logged_in_layout','templates/message',$data);
+        $this->template->load('templates/site','templates/message',$data);
       }
     }
     // If Reset Password form has been submitted
@@ -191,7 +191,7 @@ class Auth extends CI_Controller {
       if ($this->form_validation->run() == FALSE) {
         $this->template->set('title','Reset Password');
         $data['user_id'] = $this->input->post('user_id');
-        $this->template->load('templates/not_logged_in_layout','templates/auth/reset_password',$data);
+        $this->template->load('templates/site','templates/auth/reset_password',$data);
       }
       else {
         $check = $this->Auth_model->reset_password($this->input->post('user_id'),$this->input->post('password'));
@@ -205,14 +205,14 @@ class Auth extends CI_Controller {
           $data['message'] = '<div class="error">Your password was not reset.  Please Contact our web developer for assistance.</div>';
         }
         $this->template->set('title','Reset Password');
-        $this->template->load('templates/not_logged_in_layout','templates/message',$data);
+        $this->template->load('templates/site','templates/message',$data);
       }
     }
     // If there is no code present in the url
     else if($code == '') {
       // Display email form
       $this->template->set('title','Lost Password');
-      $this->template->load('templates/not_logged_in_layout','templates/auth/lost_password');
+      $this->template->load('templates/site','templates/auth/lost_password');
     }
     // If a code was present with in a url
     else {
@@ -223,12 +223,12 @@ class Auth extends CI_Controller {
         // Display Reset Password Form
         $this->template->set('title','Reset Password');
         $data['user_id'] = $user_id;
-        $this->template->load('templates/not_logged_in_layout','templates/auth/reset_password',$data);
+        $this->template->load('templates/site','templates/auth/reset_password',$data);
       }
       else {
         $data['message'] = '<div class="error">The code to reset your password has expired.  '.anchor('auth/lost_password','Please try again').'</div>';
         $this->template->set('title','Reset Password');
-        $this->template->load('templates/not_logged_in_layout','templates/message',$data);
+        $this->template->load('templates/site','templates/message',$data);
       }
 
     }
