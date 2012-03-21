@@ -70,7 +70,7 @@ class Site extends CI_Controller {
   }
   
   /**
-   * View Galleries
+   * View Public Galleries
    */
   public function gallery($gallery_id = 1,$ajax = false) {
      

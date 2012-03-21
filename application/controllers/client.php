@@ -25,5 +25,12 @@ class Development extends RA_Controller {
   public function index() {
       
   }
+  
+  /**
+   * Client Specific Gallery
+   */
+  public function gallery($first_name,$last_name,$gallery_id, $ajax = false) {
+    
+  }
 }  
   

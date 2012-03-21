@@ -44,6 +44,7 @@ $route['auth/(:any)'] = 'auth/$1';
 $route['image/(:any)'] = 'image/$1';
 $route['client/(:any)'] = 'client/$1';
 $route['admin/(:any)'] = 'admin/$1';
+$route['(([a-zA-Z]+)\.([a-zA-Z]+)\/*(\d+)*'] = 'client/gallery/$1/$2/$3';
 $route['(:any)'] = 'site/page/$1';
 
 $route['default_controller'] = "site";
