@@ -132,6 +132,7 @@ CREATE  TABLE IF NOT EXISTS `gallery` (
   `gallery_id` INT NOT NULL AUTO_INCREMENT ,
   `user_id` INT NOT NULL ,
   `public` TINYINT(1) NOT NULL DEFAULT 0 ,
+  `password` VARCHAR(50) NOT NULL ,
   PRIMARY KEY (`gallery_id`) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;

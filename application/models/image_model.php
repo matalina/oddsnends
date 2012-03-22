@@ -40,6 +40,58 @@ class Image_model extends CI_Model {
        return false;
      }
    }
+   
+   function edit_image($image) {
+     
+   }
+   
+   function remove_image($image_id) {
+     
+   }
+   
+   function new_image($image) {
+     
+   }
+   
+   function add_tag($tag,$image_id) {
+     
+   }
+   
+   function remove_tag($tag,$image_id) {
+     
+   }
+   
+   function new_tag($tag) {
+     
+   }
+   
+   function edit_tag($tag) {
+     
+   }
+   
+   function remove_tag($tag) {
+     
+   }
+   
+   function get_tags($image_id) {
+     
+   }
+   
+   function get_tag($tag_id) {
+     
+   }
+   
+   function get_image_galleries($image_id) {
+     
+   }
+   
+   function get_images_by_tag($tag_id) {
+     
+   }
+   
+   function get_image_tags($image_id) {
+     
+   }
 }
   
   

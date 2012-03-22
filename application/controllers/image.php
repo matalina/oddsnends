@@ -20,7 +20,7 @@ class Image extends CI_Controller {
   }
 
   /**
-   * Index Page
+   * View Image
    */
   public function view($image_id) {
     $this->load->model('Image_model');
