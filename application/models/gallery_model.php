@@ -28,19 +28,31 @@ class Gallery_model extends CI_Model {
   }
   
   function new_gallery($gallery) {
-    
+    $check = $this->main->insert($gallery);
+    if($check) {
+      return $this->main->insert_id();
+    }
+    else {
+      return FALSE;
+    }
   }
   
   function edit_gallery($gallery) {
-    
+    $this->main->where('gallery_id',$gallery['gallery_id']);
+    $check = $this->main->update($gallery);
+    return $check;
   }
   
   function remove_gallery($gallery_id) {
-    
+    $this->main->where('gallery_id',$gallery['gallery_id']);
+    $check = $this->main->delete($gallery);
+    return $check;
   }
   
   function get_gallery($gallery_id) {
-    
+    $this->main->where('galley_id',$gallery_id);
+    $query = $this->main->get('gallery');
+    return $query->row_array();
   }
   
   function get_gallery_images($gallery_id) {

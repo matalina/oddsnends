@@ -28,22 +28,37 @@ class Page_model extends CI_Model {
   }
   
   function new_page($page) {
-    
+    $check = $this->main->insert('page',$page);
+    if($check) {
+      return $this->main->insert_id();
+    }
+    else {
+      return FALSE;
+    }
   }
   
   function edit_page($page) {
+    $this->main->where('page_id',$page['page_id']);
+    $check = $this->main->update('page',$page);
+    return $check;
     
   }
   
   function remove_page($page_id) {
-    
+    $this->main->where('page_id',$page_id);
+    $check = $this->main->delete('page');
+    return $check;
   }
   
   function get_page_by_id($page_id) {
-    
+    $this->main->where('page_id',$page_id);
+    $query = $this->main->get('page');
+    return $query->row_array();
   }
   
   function get_page_by_stub($stub) {
-    
+    $this->main->where('stub',$stub);
+    $query = $this->main->get('page');
+    return $query->row_array();
   }
 }
