@@ -46,6 +46,7 @@ class Admin extends RA_Controller {
     $data['permissions'] = $permissions;
 
     $data['title'] = 'Manage Permissions';
+    $data['id'] = 'admin';
     $this->template->load('templates/site','dev/permissions',$data);
   }
   
@@ -56,7 +57,7 @@ class Admin extends RA_Controller {
 
     $users = $this->Auth_model->get_users();
     $data['users'] = $users;
-
+    $data['id'] = 'admin';
     $data['title'] = 'Manage Users';
     $this->template->load('templates/site','admin/users',$data);
   }
@@ -159,6 +160,7 @@ class Admin extends RA_Controller {
     $data['states'] = states_dropdown();
     $data['user'] = $user;
     $data['title'] = 'Edit User';
+    $data['id'] = 'admin';
     $this->template->load('templates/site','admin/edit_user',$data);
   }
 
@@ -176,6 +178,7 @@ class Admin extends RA_Controller {
     $this->load->helper('general');
     $data['groups'] = $groups;
     $data['title'] = 'Edit User Groups';
+    $data['id'] = 'admin';
     $this->template->load('templates/site','admin/user_groups',$data);
   }
 
@@ -252,6 +255,7 @@ class Admin extends RA_Controller {
     $this->load->helper('general');
     $data['states'] = states_dropdown();
     $data['title'] = 'New User';
+    $data['id'] = 'admin';
     $this->template->load('templates/site','admin/new_user',$data);
   }
    

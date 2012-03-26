@@ -62,6 +62,7 @@ class Site extends CI_Controller {
     $data['page'] = $page;
     if(!$ajax) { // if not ajax load view with template
       $data['title'] = $page['name'];
+      $data['id'] = $page['name'];
       $this->template->load('templates/site','site/content',$data);
     }
     else { // else echo page contents

@@ -61,6 +61,7 @@ class Auth extends CI_Controller {
       }
     }
     $this->template->set('title','Login');
+    $this->template->set('id','admin');
     $this->template->load('templates/site','templates/auth/login',$data);
   }
 
@@ -124,6 +125,7 @@ class Auth extends CI_Controller {
     }
 
     $this->template->set('title','Register');
+    $this->template->set('id','admin');
     $this->template->load('templates/site','templates/auth/register',$data);
   }
 
@@ -176,6 +178,7 @@ class Auth extends CI_Controller {
           $data['message'] = '<div class="error">That email does not exist.</div>';
         }
         $this->template->set('title','Lost Password');
+        $this->template->set('id','admin');
         $this->template->load('templates/site','templates/message',$data);
       }
     }
@@ -191,6 +194,7 @@ class Auth extends CI_Controller {
       if ($this->form_validation->run() == FALSE) {
         $this->template->set('title','Reset Password');
         $data['user_id'] = $this->input->post('user_id');
+        $this->template->set('id','admin');
         $this->template->load('templates/site','templates/auth/reset_password',$data);
       }
       else {
@@ -198,6 +202,7 @@ class Auth extends CI_Controller {
 
         // Display Message
         $this->template->set('title','Reset Password');
+        $this->template->set('id','admin');
         if($check) {
           $data['message'] = '<div class="success">Your password has been reset.  You may '.anchor('auth/login','login').' in now.</div>';
         }
@@ -212,6 +217,7 @@ class Auth extends CI_Controller {
     else if($code == '') {
       // Display email form
       $this->template->set('title','Lost Password');
+      $this->template->set('id','admin');
       $this->template->load('templates/site','templates/auth/lost_password');
     }
     // If a code was present with in a url
@@ -223,11 +229,13 @@ class Auth extends CI_Controller {
         // Display Reset Password Form
         $this->template->set('title','Reset Password');
         $data['user_id'] = $user_id;
+        $this->template->set('id','admin');
         $this->template->load('templates/site','templates/auth/reset_password',$data);
       }
       else {
         $data['message'] = '<div class="error">The code to reset your password has expired.  '.anchor('auth/lost_password','Please try again').'</div>';
         $this->template->set('title','Reset Password');
+        $this->template->set('id','admin');
         $this->template->load('templates/site','templates/message',$data);
       }
 
