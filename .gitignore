@@ -1,0 +1,4 @@
+#database config files
+/config/database.php
+/config/production/database.php
+/config/development/database.php
